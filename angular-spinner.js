@@ -108,7 +108,13 @@
 				};
 			}]);
 	}
-
-		/* Browser global */
-		factory(root.angular);
+if (typeof define === 'function' && define.amd) {
+    /* AMD module */
+    define(['angular', 'spin'], factory);
+  } else if (typeof require === 'function') {
+   factory(require('angular'), require('spin'));
+  } else {
+    /* Browser global */
+    factory(root.angular);
+  }
 }(window));
