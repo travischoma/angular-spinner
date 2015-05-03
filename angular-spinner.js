@@ -111,8 +111,8 @@
 if (typeof define === 'function' && define.amd) {
     /* AMD module */
     define(['angular', 'spin'], factory);
-  } else if (typeof require === 'function') {
-   factory(require('angular'), require('spin.js'));
+  } else if (typeof exports === 'object') {
+   module.exports = factory(require('angular'), require('spin.js'));
   } else {
     /* Browser global */
     factory(root.angular);
