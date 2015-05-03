@@ -109,11 +109,6 @@
 			}]);
 	}
 
-	if (typeof define === 'function' && define.amd) {
-		/* AMD module */
-		define(['angular', 'spin'], factory);
-	} else {
 		/* Browser global */
 		factory(root.angular);
-	}
 }(window));
